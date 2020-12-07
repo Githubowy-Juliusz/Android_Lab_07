@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicBoolean
 class PaddleMovingThread(
 	private val view: View,
 	private val speed: Float,
-	private val mover: RectMover,
+	private val mover: PaddleMover,
 	private val runOnUiThread: (action: Runnable) -> Unit
 ) {
 	private val thread = Thread(Runnable {

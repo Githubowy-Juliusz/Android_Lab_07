@@ -1,6 +1,5 @@
 package lab.main.pong
 
-import android.util.Log
 import android.view.View
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.random.Random
@@ -8,7 +7,7 @@ import kotlin.random.Random
 class BallMovingThread(
 	private val view: View,
 	private val speed: Float,
-	private val mover: RectMover,
+	private val mover: BallMover,
 	private val runOnUiThread: (action: Runnable) -> Unit
 ) {
 	private val thread = Thread(Runnable {
@@ -53,7 +52,6 @@ class BallMovingThread(
 				x = location[0].toFloat()
 			}
 			if(mover.yCollision) {
-				Log.d("Hello", "yCollision, $dy, $ysign, $ymovement")
 				ysign *= -1
 				view.getLocationOnScreen(location)
 				y = location[1].toFloat()
