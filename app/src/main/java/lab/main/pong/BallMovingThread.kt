@@ -57,6 +57,8 @@ class BallMovingThread(
 				ysign *= -1
 				view.getLocationOnScreen(location)
 				y = location[1].toFloat()
+				if(y > 1000)
+					y -= 20
 			}
 		}
 	}
